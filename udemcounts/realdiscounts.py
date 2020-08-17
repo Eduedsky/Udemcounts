@@ -30,14 +30,6 @@ def newcourses():
     csv_writer.writerow(['Course Name', 'Learning Platform', 'Course Link', 'Image Link', 'Discounted Price', 'Initial Price', 'Coupon Link'])
     
     for new_courses in new_soup.find_all(class_="col-sm-4 masonry-item"):
-        # new_courses = new_soup.find(class_="col-sm-4 masonry-item")
-        # expiring_courses = expiring_soup.find_all(class_="col-sm-3")
-        # few_courses = few_soup.find_all(class_="col-sm-3")
-        # most_courses = most_soup.find_all(class_="col-sm-3")
-        # print(new_courses.prettify())
-
-        # for new_courses in new_courses
-        # locate title
         try:
             new_title = new_courses.h4.a.text.rstrip(" .")
             print("Course Name: " + new_title)
